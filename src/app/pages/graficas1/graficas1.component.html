@@ -1,1 +1,52 @@
-<p>graficas1 works!</p>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h4> {{ graficos.grafico1.leyenda }} </h4>
+                    <div>
+                        <app-doughnut [data]="graficos.grafico1.data" [label]="graficos.grafico1.label" [type]="graficos.grafico1.type"></app-doughnut>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h4> {{ graficos.grafico2.leyenda }} </h4>
+                    <div>
+                        <app-doughnut [data]="graficos.grafico2.data" [label]="graficos.grafico2.label" [type]="graficos.grafico2.type"></app-doughnut>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h4> {{ graficos.grafico3.leyenda }} </h4>
+                    <div>
+                        <app-doughnut [data]="graficos.grafico3.data" [label]="graficos.grafico3.label" [type]="graficos.grafico3.type"></app-doughnut>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h4> {{ graficos.grafico4.leyenda }} </h4>
+                    <div>
+                        <app-doughnut [data]="graficos.grafico4.data" [label]="graficos.grafico4.label" [type]="graficos.grafico4.type"></app-doughnut>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
