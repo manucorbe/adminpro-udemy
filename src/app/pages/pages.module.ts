@@ -12,6 +12,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DoughnutComponent } from '../components/doughnut/doughnut.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { CommonModule } from '@angular/common';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { CommonModule } from '@angular/common';
         PagesComponent,
         IncrementadorComponent,
         DoughnutComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
