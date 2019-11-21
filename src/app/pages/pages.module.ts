@@ -14,6 +14,14 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { CommonModule } from '@angular/common';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FacturasComponent } from './facturas/facturas.component';
+import { ClienteComponent } from './clientes/cliente.component';
+import { FacturaComponent } from './facturas/factura.component';
+
 
 
 @NgModule({
@@ -26,7 +34,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         DoughnutComponent,
         AccountSettingsComponent,
         PromesasComponent,
-        RxjsComponent
+        RxjsComponent,
+        ProfileComponent,
+        UsuariosComponent,
+        ClientesComponent,
+        FacturasComponent,
+        FacturaComponent,
+        ClienteComponent
     ],
     exports: [
         DashboardComponent,
@@ -39,7 +53,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         PAGES_ROUTES,
         FormsModule,
         ChartsModule,
-        CommonModule
+        CommonModule,
+        PipesModule
     ]
 })
 

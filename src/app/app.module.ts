@@ -28,7 +28,7 @@ import { ServiceModule } from './services/service.module';
     APP_ROUTES,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

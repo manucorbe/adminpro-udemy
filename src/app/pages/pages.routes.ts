@@ -7,6 +7,13 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { FacturaComponent } from './facturas/factura.component';
+import { ClienteComponent } from './clientes/cliente.component';
+import { FacturasComponent } from './facturas/facturas.component';
+
 
 
 const pagesRoutes: Routes = [
@@ -21,6 +28,12 @@ const pagesRoutes: Routes = [
           { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
           { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
           { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' }},
+          { path: 'profile', component: ProfileComponent, data: { titulo: 'Perfil de Usuario' }},
+          { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios' }},
+          { path: 'clientes', component: ClientesComponent, data: { titulo: 'Mantenimiento de Clientes' }},
+          { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Página de Cliente' }},
+          { path: 'facturas', component: FacturasComponent, data: { titulo: 'Mantenimiento de Facturas' }},
+          { path: 'factura/:id', component: FacturaComponent, data: { titulo: 'Página de Factura' }},
           { path: '', pathMatch: 'full', redirectTo: '/dashboard' }]
       },
 ];

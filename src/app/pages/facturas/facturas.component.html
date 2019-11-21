@@ -1,0 +1,74 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input (keyup)="buscarFactura(input.value)" #input type="text" class="form-control" placeholder="Buscar factura...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-right">
+                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-warning" [routerLink]="['/factura','nuevo']" routerLinkActive="router-link-active">
+                                    <i class="fa fa-plus"></i>
+                                    Añadir Factura</button>
+                </div>
+                <h3 class="card-title">Facturas registradas ( {{totalRegistros}} )</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Imágen</th>
+                            <th>Nombre</th>
+                            <th>Número</th>
+                            <th>Fecha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let factura of facturas">
+                        <td class="w70">
+                            <img [src]="factura.img | imagen:'factura'" class="w50 img-circle">
+                        </td>
+                        <td>
+                            {{factura.nombre}}
+                        </td>
+                        <td>
+                            {{factura.numero}}
+                        </td>
+                        <td>
+                            {{factura.fecha | date:'dd-MM-yyyy'}}
+                        </td>
+                        <td style="text-align: right;">
+                            <button class="btn btn-primary" [routerLink]="['/factura', factura._id]">
+                                    <i class="fa fa-pencil" ></i>
+                                </button>&nbsp;
+                            <button class="btn btn-danger" (click)="borrarFactura(factura)">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                        </td>
+                    </tbody>
+                </table>
+                <button (click)="cambiarDesde(-5)" class="btn" [ngClass]="{'abc': !ant, '': ant }">
+                        Anteriores
+                    </button>&nbsp;
+                <button (click)="cambiarDesde(5)" class="btn" [ngClass]="{'abc': !sig, '': sig }">
+                        Siguientes
+                    </button>
+            </div>
+        </div>
+    </div>

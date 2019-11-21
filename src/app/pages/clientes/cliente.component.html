@@ -1,0 +1,59 @@
+<!-- /.row -->
+<div class="row animated fadeIn">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0" style="text-align: center;">Datos del cliente {{cliente.nombre}}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarCliente(f)">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input [(ngModel)]="cliente.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">NIF</label>
+                            <input [(ngModel)]="cliente.nif" name="nif" type="text" class="form-control" placeholder="NIF del Cliente" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input [(ngModel)]="cliente.email" name="email" type="email" class="form-control" placeholder="Email del Cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Teléfono</label>
+                            <input [(ngModel)]="cliente.tlf" name="tlf" type="number" class="form-control" placeholder="Teléfono del Cliente" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Dirección</label>
+                            <input [(ngModel)]="cliente.direccion" name="direccion" type="text" class="form-control" placeholder="Dirección del Cliente" required>
+                        </div>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                        <button [routerLink]="['/clientes']" routerLinkActive="router-link-active" class="btn btn-danger waves-effect waves-light">
+                            <i class="fa fa-ban"></i>
+                            Cancelar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" *ngIf="imgShow">
+        <div class="card">
+            <div class="card-body" style="text-align: center;">
+                <h4 class="card-title">Imagen</h4>
+                <img *ngIf="!imagenTemp" [src]="cliente.img | imagen:'cliente'" class="w150">
+                <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
+                <br><br>
+                <input type="file" (change)="seleccionImagen( $event.target.files[0] )">
+                <br><br>
+                <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-warning waves-effect waves-light m-r-10">
+                        Actualizar Foto
+                    <i class="fa fa-save"></i>
+                    </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,3 +7,25 @@
 .pointer {
     cursor: pointer;
 }
+
+.w150 {
+    width: 150px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+.w70 {
+    width: 70px;
+}
+
+.abc {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}

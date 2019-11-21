@@ -1,0 +1,65 @@
+<!-- /.row -->
+<div class="row animated fadeIn">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0" style="text-align: center;">Datos de la factura {{factura.nombre}}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarFactura(f)">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input [(ngModel)]="factura.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre de la Factura" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Fecha</label>
+                            <input [(ngModel)]="factura.fecha" name="fecha" type="date" class="form-control" placeholder="Fecha de la Factura" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Número</label>
+                            <input [(ngModel)]="factura.numero" name="numero" type="number" class="form-control" placeholder="Número de la Factura" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Producto</label>
+                            <input [(ngModel)]="factura.producto" name="producto" type="text" class="form-control" placeholder="Producto asociado a la factura" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Importe Total + IVA</label>
+                            <input [(ngModel)]="factura.cantidad" name="cantidad" type="number" class="form-control" placeholder="Importe de la Factura en euros" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Cliente </label>
+                            <select [(ngModel)]="factura.cliente" name="cliente" class="form-control" required (change)="cambioCliente($event.target.value)">
+                                <option value="">Seleccione el Cliente</option>
+                                <option *ngFor="let i of clientes[1]" [value]="i._id">{{i.nombre}}</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                                <i class="fa fa-save"></i>
+                                Guardar
+                            </button>
+                        <button [routerLink]="['/facturas']" routerLinkActive="router-link-active" class="btn btn-danger waves-effect waves-light">
+                                <i class="fa fa-ban"></i>
+                                Cancelar
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" *ngIf="imgShow">
+        <div class="card">
+            <div class="card-body" style="text-align: center;">
+                <h4 class="card-title">Imagen</h4>
+                <img *ngIf="!imagenTemp" [src]="factura.img | imagen:'factura'" class="w150">
+                <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
+                <br><br>
+                <input type="file" (change)="seleccionImagen( $event.target.files[0] )">
+                <br><br>
+                <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-warning waves-effect waves-light m-r-10">
+                    Actualizar Foto
+                <i class="fa fa-save"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
