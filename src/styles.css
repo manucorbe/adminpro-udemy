@@ -20,6 +20,10 @@
     width: 70px;
 }
 
+.w85 {
+    width: 85px;
+}
+
 .abc {
     opacity: 0.65;
     cursor: not-allowed;

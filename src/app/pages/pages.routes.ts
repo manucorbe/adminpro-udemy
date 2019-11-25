@@ -13,6 +13,8 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { FacturaComponent } from './facturas/factura.component';
 import { ClienteComponent } from './clientes/cliente.component';
 import { FacturasComponent } from './facturas/facturas.component';
+import { FaqComponent } from './faq/faq.component';
+
 
 
 
@@ -23,10 +25,10 @@ const pagesRoutes: Routes = [
         canActivate: [LoginGuardGuard],
         children: [
           { path: 'dashboard', component: DashboardComponent, data: { titulo: 'DashBoard' } },
-          { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
-          { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
-          { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
-          { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
+        //   { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
+        //   { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
+        //   { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
+        //   { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' }},
           { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del Tema' }},
           { path: 'profile', component: ProfileComponent, data: { titulo: 'Perfil de Usuario' }},
           { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios' }},
@@ -34,8 +36,12 @@ const pagesRoutes: Routes = [
           { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Página de Cliente' }},
           { path: 'facturas', component: FacturasComponent, data: { titulo: 'Mantenimiento de Facturas' }},
           { path: 'factura/:id', component: FacturaComponent, data: { titulo: 'Página de Factura' }},
+          { path: 'faq', component: FaqComponent, data: { titulo: 'Página de Preguntas y Comentarios' }},
           { path: '', pathMatch: 'full', redirectTo: '/dashboard' }]
       },
 ];
 
-export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
+export const PAGES_ROUTES = RouterModule.forChild(pagesRoutes);
+
+
+

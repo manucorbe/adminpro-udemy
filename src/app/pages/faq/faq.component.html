@@ -1,0 +1,39 @@
+<div class="row animated fadeIn">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body" *ngFor="let comentario of comentarios; index as i">
+                <h4 class="card-title" id={{i}}>{{i+1}}. {{comentario.titulo}}</h4>
+                <p class="text-justify">{{comentario.comentario}}</p>
+                <button (click)="sumarLike(comentario)" type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i></button>&nbsp; {{comentario.likes}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-md-12">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0" style="text-align: center;">Deja tus propios comentarios</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarComentario(f)">
+                        <div class="form-groups">
+                            <label for="exampleInputEmail1">Titulo</label>
+                            <input [(ngModel)]="newComentario.titulo" name="titulo" type="text" class="form-control" placeholder="Titulo del comentario" required>
+                        </div> <br>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Comentario</label>
+                            <textarea [(ngModel)]="newComentario.comentario" name="comentario" class="form-control" rows="5" required placeholder="Introduce aqui tu comentario"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                                <i class="fa fa-save"></i>
+                                Guardar
+                            </button>
+                        <button [routerLink]="['/faq']" routerLinkActive="router-link-active" class="btn btn-danger waves-effect waves-light">
+                                <i class="fa fa-ban"></i>
+                                Cancelar
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

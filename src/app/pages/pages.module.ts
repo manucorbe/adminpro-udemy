@@ -21,6 +21,8 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { FacturasComponent } from './facturas/facturas.component';
 import { ClienteComponent } from './clientes/cliente.component';
 import { FacturaComponent } from './facturas/factura.component';
+import { FaqComponent } from './faq/faq.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
@@ -40,7 +42,8 @@ import { FacturaComponent } from './facturas/factura.component';
         ClientesComponent,
         FacturasComponent,
         FacturaComponent,
-        ClienteComponent
+        ClienteComponent,
+        FaqComponent,
     ],
     exports: [
         DashboardComponent,

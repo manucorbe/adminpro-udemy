@@ -28,17 +28,6 @@ export class FacturasComponent implements OnInit {
     this.cargarFacturas();
   }
 
-  crearFactura(){
-    swal({
-      title: 'Añadir un nuevo Factura',
-      text: 'Inserta el Nombre del Factura',
-      content: 'input',
-      icon: 'info',
-      buttons: true,
-      dangerMode: true
-    }).then()
-  }
-
   cargarFacturas(){
     this.cargando = true;
     if (this.desde === this.totalRegistros - 1 && this.delete === true){
